@@ -1,0 +1,88 @@
+{
+	"Question":
+	    [
+	    	{
+	    	"number" : "0",
+	    	"name": "Are You Man or Woman ?",
+	    	"previousQuestion" : "0",
+	    	"option": [
+                  {"id":1,"value":"Male","nextQuestion" : "1"},
+                  {"id":2,"value": "Female","nextQuestion" : "1"}
+               ]
+	        },
+	        {
+	    	"number" : "1",
+	    	"name": "What is Your First Name, Middle Name & Last Name ?" ,
+	    	"nextQuestion" : "2",
+	    	"previousQuestion" : "0"
+	        },
+	        {
+	        "number" : "2",
+	    	"name": "What is Your Date of Birth ?",
+	    	"nextQuestion" : "3",
+	    	"previousQuestion" : "1"
+	        },
+	        {
+	        "number" : "3",
+	    	"name": "What is Your Address ?",
+	    	"nextQuestion" : "4",
+	    	"previousQuestion" : "2"
+	        },
+
+	        {
+	        "number" : "4",
+	    	"name": "What is Best Phone Number to reach you all ? ",
+	    	"nextQuestion" : "5",
+	    	"previousQuestion" : "3"
+	        },
+	        {
+	        "number" : "5",
+	    	"name": "What is Your Email address ?",
+	    	"nextQuestion" : "6",
+	    	"previousQuestion" : "4"
+	        },
+	        {
+	        "number" : "6",
+	    	"name": " Are You Married ?",
+	    	"previousQuestion" : "0",
+	    	"option": [
+                  {"id":1,"value":"Yes","nextQuestion" : "7"},
+                  {"id":2,"value": "No","nextQuestion" : "8"}
+               ]
+	        },
+	        {
+	        "number" : "7",
+	    	"name": " Name of Spouse ",
+	    	"nextQuestion" : "9",
+	    	"previousQuestion" : "6"
+	        },
+	        {
+	        "number" : "8",
+	    	"name": " Do you Have Children ? ",
+	    	"nextQuestion" : "66666",
+	    	"previousQuestion" : "6"                   
+	        },
+	        {
+	        "number" : "9",
+	    	"name": "Do You have Children Together ?",
+	    	"previousQuestion" : "7",
+	    	"option": [
+                  {"id":1,"value":"Yes","nextQuestion" : "10"},
+                  {"id":2,"value": "No","nextQuestion" : "11"}
+               ]
+	        },
+	        {
+	        "number" : "10",
+	    	"name": "Name of first child with DOB ?",
+	    	"nextQuestion" : "12",
+	    	"previousQuestion" : "9"                    
+	        },
+	        {
+	        "number" : "11",
+	    	"name": "Name of first child with DOB ?",
+	    	"nextQuestion" : "12",
+	    	"previousQuestion" : "9"                   
+	        }
+    
+	    ]
+}
