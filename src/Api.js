@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Request from 'superagent';
+import Question from './Question';
+
 
 
 class Api extends React.Component {
@@ -54,89 +56,14 @@ class Api extends React.Component {
         <div>
             <div>
                { this.state.data.map((dynamicComponent, i) => 
-                  <Content 
+                  <Question 
                   componentData = {dynamicComponent}  next= {this.state.currentQuestion}/>)}
-                  
-                   
-                  <button onClick = { this.previousQuestion } > previous</button>
+                  <button onClick = { this.previousQuestion } > Previous</button>
                   <button onClick = { this.nextQuestion } > Next </button>
-
-                
-                  
-              
             </div>
         </div>
       );
    }
-}
-
-class Content extends React.Component {
-    constructor(){
-      super();
-      this.state = {
-         currentQuestion:0,
-         nextQuestion : 0,
-      }
-
-      this.sum = this.sum.bind(this); 
-
-    }
-
-    sum(e){
-       localStorage.setItem('nextQuestion', e.target.value);
-    }
-
-    cal(e){
-       localStorage.setItem('nextQuestion', e.target.name);
-    }
-
-    
-
-    render() {
-       
-      let count= this.props.componentData.number;
-      let c=this.props.next;
-      
-
-      if( count == c){
-          localStorage.setItem('previousQuestion', this.props.componentData.previousQuestion);
-      }
-
-
-      return (
-          <div>
-              { 
-                ( count == c )
-                  ? 
-                   (this.props.componentData.option)?
-                       <div>
-                            <h1>{this.props.componentData.name}</h1>
-
-                            <label>
-                                <input type="checkbox" onClick={ this.sum } value={ this.props.componentData.option[0].nextQuestion }/> { this.props.componentData.option[0].value}
-                            </label>
-
-                             <label>
-                                <input type="checkbox" onClick={ this.sum } value={ this.props.componentData.option[1].nextQuestion }/> { this.props.componentData.option[1].value}
-                            </label>
-
-
-                        </div>
-
-                       : 
-                          <div>
-                              <h1>{this.props.componentData.name}</h1>
-                              <label>
-                                  <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="wsdcwsxd"/>
-                              </label> 
-                          </div>
-                  : "" 
-
-          
-              }
-          </div>
-       );
-    }
 }
 
 export default Api;

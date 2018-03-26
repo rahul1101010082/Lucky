@@ -6,7 +6,7 @@ div{
 }
 
 button {
-    background-color: #4CAF50;
+    background-color:green;
     border: none;
     color: white;
     padding: 10px 30px;
@@ -17,4 +17,22 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     margin-left: 30px;
+}
+
+input[type=text] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+}
+
+input[type=date] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
 }
