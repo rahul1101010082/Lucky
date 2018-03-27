@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Request from 'superagent';
 import Dyanamic from './dyanamicQuestion';
+import Demo from './demo';
 
 
 class Question extends React.Component {
@@ -11,8 +12,11 @@ class Question extends React.Component {
         this.state = {
             currentQuestion:0,
             nextQuestion : 0,
+            childcount : 2 ,
         }
-        this.sum = this.sum.bind(this); 
+       
+        this.mul = this.mul.bind(this); 
+
     }
 
     sum(e){
@@ -23,20 +27,33 @@ class Question extends React.Component {
         localStorage.setItem('nextQuestion', e.target.name);
     }
 
+    mul(e){
+       localStorage.setItem('nextQuestion', e.target.value);
+       this.setState({ childcount : this.state.childcount +1 })
+       localStorage.setItem('index',this.state.childcount + 1);
+
+    }
+
     render() {
         let count= this.props.componentData.number;
         let c=this.props.next;
-     
+        let index = localStorage.getItem('index');
+        
         if( count == c){
-            localStorage.setItem('previousQuestion', this.props.componentData.previousQuestion);
+            if(index == 2){
+                localStorage.setItem('previousQuestion', 11 );
+                localStorage.removeItem('index');
+            }else {
+                localStorage.setItem('previousQuestion', this.props.componentData.previousQuestion); 
+            }
         }
 
         return (
             <div>
                 { 
-                ( count == c )
+                ( count == c && count )
                     ? 
-                        (this.props.componentData.option) ?
+                        (this.props.componentData.type == "option") ?
                         <div>
                             <h1>{this.props.componentData.name}</h1>
                             <form>
@@ -115,15 +132,62 @@ class Question extends React.Component {
                             <label>
                                 <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
                             </label>
+                            <label>
+                                <input type="date" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
+                            </label>
                         </div>
                         :
                         (this.props.componentData.type == "second-name-child") ?
-                            <Dyanamic name = { this.props.componentData.name} />
-                        : ""
-                  : "" 
-              }
-          </div>
-       );
+                            ( index ) ? 
+                            <div>
+                                <h1> Name of { index } child with DOB ? </h1>
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="First Name"/>
+                                </label>  <br/>
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Middle Name"/>
+                                </label> <br />
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
+                                </label>
+                                <label>
+                                    <input type="date" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
+                                </label>
+                            </div>
+                            : 
+                            <div>
+                                <h1> Name of { this.state.childcount } child with DOB ? </h1>
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="First Name"/>
+                                </label>  <br/>
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Middle Name"/>
+                                </label> <br />
+                                <label>
+                                    <input type="text" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
+                                </label>
+                                <label>
+                                    <input type="date" name={ this.props.componentData.nextQuestion } onClick = {this.cal }  placeholder="Last Name"/>
+                                </label>
+                            </div>
+                        : 
+                        (this.props.componentData.type == "option-1") ?
+                        <div>
+                            <h1>{this.props.componentData.name}</h1>
+                            <form>
+                                <label>
+                                    <input type="radio" name="true" onClick={ this.mul } value={ this.props.componentData.option[0].nextQuestion }/> { this.props.componentData.option[0].value}
+                                </label>
+                                <label>
+                                    <input type="radio" name="true" onClick={ this.mul } value={ this.props.componentData.option[1].nextQuestion } /> { this.props.componentData.option[1].value}
+                                </label>
+                            </form>
+                        </div>
+                        :""
+                    : "" 
+                }
+            </div>
+        );
     }
 }
 

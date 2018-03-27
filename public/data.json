@@ -5,6 +5,7 @@
 	    	"number" : "0",
 	    	"name": "Are You Man or Woman ?",
 	    	"previousQuestion" : "0",
+	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Male","nextQuestion" : "1"},
                   {"id":2,"value": "Female","nextQuestion" : "1"}
@@ -50,6 +51,7 @@
 	        "number" : "6",
 	    	"name": " Are You Married ?",
 	    	"previousQuestion" : "0",
+	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "7"},
                   {"id":2,"value": "No","nextQuestion" : "8"}
@@ -66,6 +68,7 @@
 	        "number" : "8",
 	    	"name": " Do you Have Children ? ",
 	    	"previousQuestion" : "6",
+	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "10"},
                   {"id":2,"value": "No","nextQuestion" : "6"}
@@ -75,9 +78,10 @@
 	        "number" : "9",
 	    	"name": "Do You have Children Together ?",
 	    	"previousQuestion" : "7",
+	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "10"},
-                  {"id":2,"value": "No","nextQuestion" : "11"}
+                  {"id":2,"value": "No","nextQuestion" : "13"}
                ]
 	        },
 	        {
@@ -90,7 +94,8 @@
 	        {
 	        "number" : "11",
 	    	"name": "Do You have Another Children Together together?",
-	    	"previousQuestion" : "7",
+	    	"previousQuestion" : "10",
+	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "12"},
                   {"id":2,"value": "No","nextQuestion" : "13"}
@@ -100,17 +105,39 @@
 	        "number" : "12",
 	    	"name": "Name of Second child with DOB ?",
 	    	"type" : "second-name-child",
-	    	"nextQuestion" : "13",
-	    	"previousQuestion" : "11"                    
+	    	"nextQuestion" : "15",
+	    	"previousQuestion" : "15"                    
 	        },
 	        {
 	        "number" : "13",
 	    	"name": "Does your spouse have any children from any prior marriage or relationship?",
-	    	"previousQuestion" : "7",
+	    	"previousQuestion" : "11",
+	    	"type" : "option",
+	    	"option": [
+                  {"id":1,"value":"Yes","nextQuestion" : "10"},
+                  {"id":2,"value": "No","nextQuestion" : "14"}
+               ]
+	        },
+	        {
+	        "number" : "14",
+	    	"name": "Who Do you Want to Manage Your Estate if you die ?",
+	    	"previousQuestion" : "13",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "10"},
                   {"id":2,"value": "No","nextQuestion" : "110"}
                ]
+	        },
+	        {
+	        "number" : "15",
+	    	"name": "Do you Have another child ?",
+	    	"type" : "option-1",
+	    	"previousQuestion" : "12",
+	    	"option": [
+                  {"id":1,"value":"Yes","nextQuestion" : "12"},
+                  {"id":2,"value": "No","nextQuestion" : "13"}
+               ]          
 	        }
+
+	        
 	    ]
 }

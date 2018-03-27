@@ -13,6 +13,7 @@ class Api extends React.Component {
         this.state={
            data:[],
            questions:[],
+           count : 0,
            currentQuestion:0,
            nextQuestion:0,
            value : "Initaial Data"
@@ -23,11 +24,14 @@ class Api extends React.Component {
 
     nextQuestion(){
        var next=localStorage.getItem('nextQuestion');
+       this.setState({ count : this.state.count +1})
+       
        this.setState({ currentQuestion:next})
     }
 
     previousQuestion(){
       var pre=localStorage.getItem('previousQuestion');
+      
       this.setState({ currentQuestion:pre})
       localStorage.removeItem('nextQuestion');
     }
@@ -58,6 +62,8 @@ class Api extends React.Component {
                { this.state.data.map((dynamicComponent, i) => 
                   <Question 
                   componentData = {dynamicComponent}  next= {this.state.currentQuestion}/>)}
+
+
                   <button onClick = { this.previousQuestion } > Previous</button>
                   <button onClick = { this.nextQuestion } > Next </button>
             </div>
