@@ -50,7 +50,7 @@
 	        {
 	        "number" : "6",
 	    	"name": " Are You Married ?",
-	    	"previousQuestion" : "0",
+	    	"previousQuestion" : "5",
 	    	"type" : "option",
 	    	"option": [
                   {"id":1,"value":"Yes","nextQuestion" : "7"},
@@ -106,7 +106,7 @@
 	    	"name": "Name of Second child with DOB ?",
 	    	"type" : "second-name-child",
 	    	"nextQuestion" : "15",
-	    	"previousQuestion" : "15"                    
+	    	"previousQuestion" : "11"                    
 	        },
 	        {
 	        "number" : "13",
@@ -126,18 +126,7 @@
                   {"id":1,"value":"Yes","nextQuestion" : "10"},
                   {"id":2,"value": "No","nextQuestion" : "110"}
                ]
-	        },
-	        {
-	        "number" : "15",
-	    	"name": "Do you Have another child ?",
-	    	"type" : "option-1",
-	    	"previousQuestion" : "12",
-	    	"option": [
-                  {"id":1,"value":"Yes","nextQuestion" : "12"},
-                  {"id":2,"value": "No","nextQuestion" : "13"}
-               ]          
 	        }
-
-	        
+	      
 	    ]
 }
